@@ -1,8 +1,8 @@
 import java.io.*;
 public class EmployeeTest {
     public static void main(String[] args) {
-        Employee empOne = new Employee("runoob1");
-        Employee empTwo = new Employee("runoob2");
+        Employee2 empOne = new Employee2("runoob1");
+        Employee2 empTwo = new Employee2("runoob2");
 
         empOne.empAge(26);
         empOne.empDesignation("高级程序员");
