@@ -51,4 +51,15 @@
         <servlet-name>sc</servlet-name>
         <url-pattern>/sc</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loadonstartup</servlet-name>
+        <servlet-class>xyz.vaith.servlet.LoadOnStartup</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>loadonstartup</servlet-name>
+        <url-pattern>/loadonstartup</url-pattern>
+    </servlet-mapping>
 </web-app>
