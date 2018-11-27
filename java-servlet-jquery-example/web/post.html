@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        function post() {
+            $.post("jpost", {name: "v", age: 12}, function(data, state) {
+                alert(data);
+            });
+        }
+    </script>
+</head>
+<body>
+<a href="" onclick="post()">jQuery Post</a>
+</body>
+</html>
