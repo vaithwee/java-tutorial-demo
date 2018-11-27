@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function get() {
+
+            var ajax = getAjax();
+            ajax.open("GET", "/ajaxget?name=v&age=12", true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    alert(ajax.responseText);
+                }
+            }
+            ajax.send();
+        }
+
+        function getAjax() {
+            var xmlHttp;
+            try{ // Firefox, Opera 8.0+, Safari
+                xmlHttp=new XMLHttpRequest();
+            }
+            catch (e){
+                try{// Internet Explorer
+                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e){
+                    try{
+                        xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e){}
+                }
+            }
+
+            return xmlHttp;
+        }
+    </script>
+</head>
+<body>
+    <h3><a href="" onclick="get()">Get</a></h3>
+</body>
+</html>

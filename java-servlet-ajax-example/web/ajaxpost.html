@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function post() {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function (ev) {
+                if (request.status == 200 && request.readyState == 4)
+                {
+                    alert(request.responseText);
+                }
+            }
+            request.open("POST", "ajaxpost", true);
+            request.send("name=p&&age=12");
+        }
+    </script>
+</head>
+<body>
+<a href="" onclick="post()">Ajax Post</a>
+</body>
+</html>

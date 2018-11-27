@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function checkUsername() {
+            var request = new XMLHttpRequest();
+            var username = document.getElementById("username").value;
+            request.open("POST", "signincheck", true);
+            request.onreadystatechange = function (ev) {
+                if (request.status == 200 && request.readyState == 4) {
+                    if (request.responseText == '0') {
+                        document.getElementById("check").innerHTML = "<font color='red'>用户名可以使用</font>"
+                    } else {
+                        document.getElementById("check").innerHTML = "<font color='black'>用户名已经被注册了</font>"
+                    }
+
+                }
+            }
+            request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            request.send("username=" + username);
+        }
+    </script>
+</head>
+<body>
+<table width="300">
+    <tr>
+        <td>用户名:<input type="text" id="username" name="username" onblur="checkUsername()" /><span id="check"></span></td>
+    </tr>
+    <tr>
+        <td>密码:<input type="password" /></td>
+    </tr>
+    <tr>
+        <td>重复密码:<input type="password" /></td>
+    </tr>
+    <tr>
+        <td>邮箱:<input type="email" /></td>
+    </tr>
+</table>
+</body>
+</html>
